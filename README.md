@@ -10,12 +10,16 @@ This project demonstrates:
 - Redis as a message broker and caching backend.
 - JWT authentication integration.
 - Modular, clean project architecture.
+- Elasticsearch integration for logging user activities on posts.
+- Kibana support for visualizing logs.
 
 ## Features
 - Generate and store OTP codes linked to user emails.
 - Send OTP emails asynchronously using Celery workers.
 - Secure API endpoints for requesting OTP.
 - Configurable expiration time for OTP codes.
+- Full CRUD operations on posts with owner-based permissions.
+- Log all post-related CRUD activities to Elasticsearch for audit and monitoring.
 - Docker and docker-compose setup for easy deployment.
 
 ## Requirements
@@ -23,7 +27,18 @@ This project demonstrates:
 - Django 5.x
 - Celery 5.x
 - Redis Server 5+
+- Elasticsearch 7.x
 - Other Python dependencies (see `requirements.txt`)
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Nasim-Khalili/emailverify.git
+   cd emailverify
+   pip install -r requirements.txt
+
 
 ## Installation
 1. Clone the repository:
@@ -44,8 +59,6 @@ Start Redis server (locally or Docker):
   ```
   celery -A myproject worker -l info
   ```
-
-
 
 ### 👩‍💻 Contributing & Support
 
