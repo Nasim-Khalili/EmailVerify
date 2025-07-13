@@ -59,6 +59,25 @@ Start Redis server (locally or Docker):
   ```
   celery -A myproject worker -l info
   ```
+---
+
+## Dockerization & Deployment with Nginx and HTTPS
+
+To simplify deployment and ensure scalability, this project supports full Docker containerization including:
+
+- **Django app** and **Celery worker** running inside Docker containers.
+- **Redis** as a service container for caching and Celery broker.
+- **Nginx** as a reverse proxy server managing HTTP/HTTPS traffic and serving static files.
+- HTTPS support through Nginx for secure communication.
+
+### Running the project with Docker
+
+1. Build and start all services using Docker Compose:
+
+   ```bash
+   docker-compose up --build
+
+
 
 ### 👩‍💻 Contributing & Support
 
