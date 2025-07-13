@@ -13,7 +13,6 @@ from .serializers import PostSerializer
 from .elasticsearch_helpers import log_post_action
 
 class SendOTPView(APIView):
-   
     def post(self, request):
         email = request.data.get("email")
 
@@ -81,8 +80,7 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
             return True
         # Write permissions only for owner
         return obj.owner == request.user
-
-
+    
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
