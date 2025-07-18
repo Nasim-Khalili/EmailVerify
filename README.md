@@ -92,5 +92,3 @@ If you like this project or found it useful, feel free to:
 ### 📬 Contact
 
 Made with  by **Nasim Khalili**  
-
-
