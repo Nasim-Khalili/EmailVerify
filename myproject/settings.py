@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     'rest_framework',
     'accounts',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -160,3 +161,14 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
        
+ASGI_APPLICATION = 'realtime_email.asgi.application'
+
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [("localhost", 6379)],
+        },
+    },
+}
